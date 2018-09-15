@@ -7,7 +7,7 @@ client.on('ready', () => {
   console.log('By STEWART ALPHACODES');
 console.log('----------------');
 console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(` TeST ${client.guilds.size} `,"https://www.twitch.tv/")
+client.user.setGame(`TeST`,"https://www.twitch.tv/")
 client.user.setStatus("dnd")
 });
   console.log('')
