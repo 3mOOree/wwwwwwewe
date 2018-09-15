@@ -2,13 +2,24 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '.'
 
-client.on('ready', () => {
-    console.log('----------------');
-  console.log('By STEWART ALPHACODES');
-console.log('----------------');
-console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`TeST`,"https://www.twitch.tv/")
-client.user.setStatus("dnd")
+client.on('ready', function(){
+    var ms = 10000 ;
+    var setGame = ['TeST'];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`http://www.twitch.tv/iXMiDo`);
+    }, ms);
+  console.log('---------------');
+  console.log('GaMerZ -Bot Is Online')
+  console.log('---------------')
 });
   console.log('')
   console.log('')
