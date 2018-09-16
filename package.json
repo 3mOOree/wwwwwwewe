@@ -15,6 +15,7 @@
     "random-number": "^0.0.9",
     "dateformat": "3.0.3",
     "fs": "^0.0.2",
+	"gif-search": "^^2.81.0",
     "giphy-api": "1.2.7",
     "math-expression-evaluator":"1.2.17",
     "common-tags":"1.7.2",
