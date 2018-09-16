@@ -1,10 +1,13 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 const client = new Discord.Client();
-const prefix = '.'
+const prefix = '='
+
+
+
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`TeST`,"http://twitch.tv/Mohamed192837465%22")
+client.user.setGame(`TeST`,"http://twitch.tv/Mohamed192837465")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -27,12 +30,6 @@ client.user.setGame(`TeST`,"http://twitch.tv/Mohamed192837465%22")
   console.log('')
   console.log('')
 });
-
-
-
-
-
-client.login(process.env.BOT_TOKEN);
 
 
 client.on('message', msg => {
@@ -274,7 +271,7 @@ client.on('message' , message => {
 46
 47
 
-const Discord = require('discord.js');
+
 
 const Util = require('discord.js');
 
@@ -294,9 +291,9 @@ const fs = require('fs');
 
 const gif = require("gif-search");
 
-const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "=";
+
+
 /////////////////////////
 ////////////////////////
 
@@ -571,8 +568,5 @@ client.on('ready', () => {
      client.user.setActivity("Command : =help-m",{type: ''});
 
 });
-
-
-
 
 client.login(process.env.BOT_TOKEN);
