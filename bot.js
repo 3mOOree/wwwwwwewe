@@ -29,6 +29,12 @@ client.user.setGame(`TeST`,"http://twitch.tv/Mohamed192837465%22")
 });
 
 
+
+
+
+client.login(process.env.BOT_TOKEN);
+
+
 client.on('message', msg => {
   if (msg.content === 'ping') {
     msg.reply('Pong!');
