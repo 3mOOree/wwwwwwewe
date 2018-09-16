@@ -644,9 +644,7 @@ const config = require('./config.json');
 const allowedUsers = config.allowedUsers;
 const roles = config.roleToDisco;
  
-client.on("ready", () => {
-    client.user.setPresence({ game: { name: `Disco Roles! Created by i am toast#1213` }, type: 0 });
-    console.log("Disco role bot online! Created by i am toast.");
+
 });
 
 client.login(process.env.BOT_TOKEN);
