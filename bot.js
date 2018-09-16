@@ -158,11 +158,10 @@ client.on('message', message => {
 46
 47
 
-client.on('message' , message => {
-  var prefix = "=";
+client.on('message' , message => {;
   if(message.author.bot) return;
 
-  if(message.content.startsWith(prefix + "xo")) {
+    if(message.content.startsWith('=xo')) {
  let array_of_mentions = message.mentions.users.array();
   let symbols = [':o:', ':heavy_multiplication_x:'] 
   var grid_message;
@@ -178,11 +177,11 @@ client.on('message' , message => {
     let player2_id = array_of_mentions[random2].id;
     var turn_id = player1_id;
     var symbol = symbols[0];
-    let initial_message = `Game match between <@${player1_id}> and <@${player2_id}>!`;
+    let initial_message = `مباراة بين <@${player1_id}> و <@${player2_id}>!`;
     if (player1_id == player2_id) {
-      initial_message += '\n_( playing this game with yourself :joy:)_'
+      initial_message += '\n_(من الخاسر, انت تلعب هذا الدور مع نفسك :joy:)_'
     }
-    message.channel.send(`Xo ${initial_message}`)
+    message.channel.send(`xo! ${initial_message}`)
     .then(console.log("Successful tictactoe introduction"))
     .catch(console.error);
     message.channel.send(':one::two::three:' + '\n' +
@@ -191,9 +190,9 @@ client.on('message' , message => {
     .then((new_message) => {
       grid_message = new_message;
     })
-    .then(console.log("Successful tictactoe game initialization"))
+    .then(console.log("Successful xo game initialization"))
     .catch(console.error);
-    message.channel.send('Loading... Please wait for the :ok: reaction.')
+    message.channel.send('يتم تحميل... انتظر الريئاكشن :ok:')
     .then(async (new_message) => {
       await new_message.react('1⃣');
       await new_message.react('2⃣');
@@ -205,18 +204,18 @@ client.on('message' , message => {
       await new_message.react('8⃣');
       await new_message.react('9⃣');
       await new_message.react('🆗');
-      await new_message.edit(`It\'s <@${turn_id}>\'s turn! Your symbol is ${symbol}`)
+      await new_message.edit(`انه دور <@${turn_id}> علامتك هي${symbol}`)
       .then((new_new_message) => {
-        require('./xo.js')(client, message, new_new_message, player1_id, player2_id, turn_id, symbol, symbols, grid_message);
+        require('./alpha.js')(client, message, new_new_message, player1_id, player2_id, turn_id, symbol, symbols, grid_message);
       })
-      .then(console.log("Successful tictactoe listener initialization"))
+      .then(console.log("Successful xo listener initialization"))
       .catch(console.error);
     })
-    .then(console.log("Successful tictactoe react initialization"))
+    .then(console.log("Successful xo react initialization"))
     .catch(console.error);
   }
   else {
-    message.reply(` :anger: \`Use : ${prefix}xo @player1 @player2\``)
+    message.reply(`_مهلا مهلا_ :anger: \`(استعمل هذا: ${prefix}xo @player1 @player2)\``)
     .then(console.log("Successful error reply"))
     .catch(console.error);
   }
@@ -559,6 +558,96 @@ client.on('message', message => {
 		.addField('vol', 'لتغيير درجة الصوت 100 - 0')
       message.channel.send(helpEmbed);
     }
+});
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+
+client.on("message", message => {
+ 
+  function discoRole() {
+    let random = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+    roles.forEach((role) => {
+      let theRole = message.guild.roles.find("name", role);
+      theRole.edit({color: random}).catch(e => {
+        return message.channel.send(":x: **Error:** The role you specified in the `config.json` is either not a role on this server, or his a role higher than the highest role that I have.");
+      });
+    });
+  }
+ 
+  if(message.content.startsWith(prefix + "startdisco")) {
+    if(allowedUsers.includes(message.author.id)) {
+    setInterval(() => { discoRole(); }, config.ms);
+    message.channel.send("```css\nDiscoing...```");
+    message.channel.send("Please make sure you read the README, you could get IP banned from discord because of ratelimits.");
+  } else {
+    message.reply(`You do not have permission to disco. If you have downloaded this bot off of github please go to the config.json and add your user ID to the "allowedUsers" value.`);
+  }
+} else
+ 
+if(message.content.startsWith(prefix + "stopdisco")) {
+  if(allowedUsers.includes(message.author.id)) {
+  message.channel.send("I've stopped discoing.");
+  setTimeout(() => { console.log(process.exit(0)); }, 300);
+} else {
+  message.reply(`You do not have permission to disco. If you have downloaded this bot off of github please go to the config.json and add your user ID to the "allowedUsers" value.`);
+  }
+}
+ 
+});
+const config = require('./config.json');
+const prefix = config.prefix;
+const allowedUsers = config.allowedUsers;
+const roles = config.roleToDisco;
+ 
+client.on("ready", () => {
+    client.user.setPresence({ game: { name: `Disco Roles! Created by i am toast#1213` }, type: 0 });
+    console.log("Disco role bot online! Created by i am toast.");
 });
 
 client.login(process.env.BOT_TOKEN);
