@@ -546,7 +546,7 @@ client.on('message', message => {
     if (message.content === '=help-m') {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر الميوزك**')
-        .setDescription('** ( 2$ ) برفكس البوت**')
+        .setDescription('** ( = ) برفكس البوت**')
         .addField('play', 'لتشغيل اغنية')
         .addField('join', 'لدخول رومك الصوتي')
         .addField('disconnect', 'للخروج من رومك الصوتي')
@@ -559,13 +559,6 @@ client.on('message', message => {
 		.addField('vol', 'لتغيير درجة الصوت 100 - 0')
       message.channel.send(helpEmbed);
     }
-});
-
-
-
-client.on('ready', () => {
-     client.user.setActivity("Command : =help-m",{type: ''});
-
 });
 
 client.login(process.env.BOT_TOKEN);
