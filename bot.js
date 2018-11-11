@@ -115,7 +115,7 @@ client.channels.find('511239519144771614', 'ChannelID').setName("「 Welcome");
 client.channels.find('511239519144771614', 'ChannelID').setName("「 Welcome To");
 client.channels.find('511239519144771614', 'ChannelID').setName("「 Welcome To ");
 client.channels.find('511239519144771614', 'ChannelID').setName("「 Welcome To S");
-client.channels.find('511239519144771614', 'ChannelID').setName("「 Welcome To Su);
+client.channels.find('511239519144771614', 'ChannelID').setName("「 Welcome To Su");
 client.channels.find('id', 'ChannelID').setName("「 Welcome To Sup");
 client.channels.find('511239519144771614', 'ChannelID').setName("「 Welcome To Supe");
 client.channels.find('511239519144771614', 'ChannelID').setName("「 Welcome To Super );
