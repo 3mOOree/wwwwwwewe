@@ -107,45 +107,54 @@ ${thisMessage}\`\`\`
       })}});
 
 
+client.on('message', async message => {
+  if(message.content.startsWith("#تقديم")) {
+    await message.channel.send("** ما لغتك؟**").then(e => {
+    let filter = m => m.author.id === message.author.id
+    let lan = '';
+    let md = '';
+    let br = '';
+    let chaLan = message.channel.awaitMessages(filter, { max: 1, time: 400000, errors: ['time'] })
+    .then(collected => {
+      lan = collected.first().content
+      collected.first().delete()
+e.delete();
+     message.channel.send('** ما خبرتك؟**').then(m => {
+let chaMd = message.channel.awaitMessages(filter, { max: 1, time: 400000, errors: ['time'] })
+.then(co => {
+  md = co.first().content
+        co.first().delete()
+        m.delete();
+message.channel.send('**من متي وانت تبرمج؟**').then(ms => {
+let br = message.channel.awaitMessages(filter, { max: 1, time: 400000, errors: ['time'] })
+.then(col => {
+  br = col.first().content
+        col.first().delete()
 
-const devs = ["449567019243798528"];
-const adminprefix = [" $ "];
-client.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!developer.includes(message.author.id)) return;
-      
-  if (message.content.startsWith(adminprefix + 'setgame')) {
-    client.user.setGame(argresult);
-      message.channel.send(`**✅   ${argresult}**`)
-  } else 
-     if (message.content === (adminprefix + "leave")) {
-    message.guild.leave();        
-  } else  
-  if (message.content.startsWith(adminprefix + 'wt')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.send(`**✅   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'ls')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send(`**✅   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'st')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/idk");
-      message.channel.send(`**✅**`)
-  }
-  if (message.content.startsWith(adminprefix + 'setname')) {
-  client.user.setUsername(argresult).then
-      message.channel.send(`Changing The Name To ..**${argresult}** `)
-} else
-if (message.content.startsWith(adminprefix + 'setavatar')) {
-  client.user.setAvatar(argresult);
-    message.channel.send(`Changing The Avatar To :**${argresult}** `);
-}
+ms.delete()
+
+ message.channel.send('جاري التقديم ..').then(b => {
+        setTimeout(() => {
+  b.edit(`**تم التقديم وسيتم الرد فـ اقرب وقت**`)
+        },2000);
+var gg = message.guild.channels.find('name', '✻-التقديمات')
+if(!gg) return;
+if(gg) {
+gg.send({embed : new Discord.RichEmbed()
+.setDescription(`**  اللغة :question:  : \n ${lan}\nالخبرة :link: :\n ${md} \nالمدة :question: :\n ${br}  \nتم التقديم بواسطة  : <@${message.author.id}> **`)  
+          .setFooter(`Superme™`)
+.setTimestamp()
 });
-
-
-
-
+}        
+})
+})
+})
+})
+})
+})
+})
+ }
+})
 
 
 
