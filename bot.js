@@ -162,7 +162,7 @@ client.on('message', message => {
   var sender = message.author
 
 if(!message.guild) return
-  if(!ar[message.guild.id]) ar[message.guild.id] = {
+  if(ar[message.guild.id]) ar[message.guild.id] = {
   onoff: 'Off',
   role: 'Member'
   }
