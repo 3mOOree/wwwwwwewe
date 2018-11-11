@@ -132,7 +132,7 @@ client.on('message', message => {
     client.user.setGame(argresult, "https://www.twitch.tv/حب بلا حدود");
       message.channel.sendMessage(`**✅   ${argresult}**`)
   }
-
+});
 
 
 
