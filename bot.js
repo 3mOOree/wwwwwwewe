@@ -162,7 +162,7 @@ client.on('message', message => {
   var sender = message.author
 
 if(!message.guild) return
-  if(!ar([message.guild.id]) ar[message.guild.id] = {
+  if(!ar[message.guild.id] ar[message.guild.id] = {
   onoff: 'Off',
   role: 'Member'
   }
@@ -188,7 +188,7 @@ if(message.content.startsWith(`#autorole`)) {
      message.channel.send(`**The AutoRole Has Been Changed to ${newRole}.**`)
    } 
          }
-if(message.content === '!info') {
+if(message.content === '#info') {
     let perms = message.member.hasPermission(`MANAGE_GUILD`) 
     if(!perms) return message.reply(`You don't have permissions.`)
     var embed = new Discord.RichEmbed()
