@@ -208,7 +208,7 @@ Role : __${ar[message.guild.id].role}__`)
 
 
 });
-})
+}
 
 
 
