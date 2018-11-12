@@ -338,7 +338,7 @@ var filter = m => m.author.id === message.author.id;
       });
     });
   }
-});
+
 
 
 client.login(process.env.BOT_TOKEN)
