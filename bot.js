@@ -162,7 +162,7 @@ client.on('message', message => {
   var sender = message.author
 
 if(!message.guild) return
-  if(!ar[message.guild.id] ar[message.guild.id] = {
+  if(!ar[message.guild.id]) ar[message.guild.id] = {
   onoff: 'Off',
   role: 'Member'
   }
@@ -205,7 +205,7 @@ Role : __${ar[message.guild.id].role}__`)
 
     fs.writeFile("./AutoRole.json", JSON.stringify(ar), (err) => {
     if (err) console.error(err)
-}))))
+});
     
 
 
