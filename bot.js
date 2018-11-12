@@ -94,7 +94,7 @@ ${thisMessage}\`\`\`
 **وصف الكود**: ${boi}
 **تم النشر بواسطة**: ${message.author}
 **المصدر / الشخص الذي صنع الكود**: ${boi2}`); 
-}
+         }
         }
     );
 });
@@ -104,7 +104,7 @@ ${thisMessage}\`\`\`
     });
 }
 );
-      })}});
+      
 
 
 client.on('message', async message => {
@@ -145,6 +145,16 @@ gg.send({embed : new Discord.RichEmbed()
           .setFooter(`Superme™`)
 .setTimestamp()
 });
+}        
+})
+})
+})
+})
+})
+})
+})
+ }
+})
 
  
 
