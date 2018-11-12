@@ -203,12 +203,15 @@ client.on('message', message => {
 
 .addField('Count: ' , message.guild.memberCount)
 .setColor("RANDOM")
-.set footor(By void >> ALPHA CoDeS)
 .setDescription(${message.guild.name})
      message.channel.sendEmbed(embed);
 } 
 
 });
+
+
+
+
 
 
 
