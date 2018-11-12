@@ -148,10 +148,10 @@ client.on('message', async (message) => {
 })
 
 
-const code = '!';
+const prefix = '!';
 
 client.on('message',async message => {
-    if(message.content.startsWith(code + "html")) {
+    if(message.content.startsWith(prefix + "html")) {
   if(!message.channel.guild) return message.reply(' ');
     let rank = message.guild.member(message.author).roles.find('name', '• Superme » Support');
     if (!rank) return message.channel.send(':octagonal_sign: **| يجب ان تمتلك رتبة • Superme » Support لأستخدام هذا الأمر.**');
