@@ -203,7 +203,7 @@ client.on('message', message => {
 
 .addField('Count: ' , message.guild.memberCount)
 .setColor("RANDOM")
-.setDescription({${message.guild.name})
+.setDescription(`${message.guild.name}`)
      message.channel.sendEmbed(embed);
 } 
 
