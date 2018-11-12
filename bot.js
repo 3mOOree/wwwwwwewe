@@ -197,7 +197,7 @@ client.on('guildMemberAdd', Ammar=> {
 
 client.on('message', message => {
 
-    if (message.content === "-count") {
+    if (message.content === "#count") {
 
     let embed = new Discord.RichEmbed()
 
