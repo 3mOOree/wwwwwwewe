@@ -190,7 +190,7 @@ client.on('guildMemberAdd', Ammar=> {
     .addField(' 👤  انت رقم',`**[ ${Ammar.guild.memberCount} ]**`,true)
     .setColor('RANDOM')
     .setFooter(Ammar.guild.name, Ammar.guild.iconURL, true)
-    var channel =Ammar.guild.channels.find('name', ' (ᏔᎬᏞᏨᏫᎷᎬ)') // هنا حط اسم الروم الي تبيه يكتب فيه
+    var channel =Ammar.guild.channels.find('name', '✽-welcome') // هنا حط اسم الروم الي تبيه يكتب فيه
     if (!channel) return;
     channel.send({embed : embed});
     });
