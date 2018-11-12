@@ -16,7 +16,7 @@ client.on('ready', () => {
     console.log(`Users! [ " ${client.users.size} " ]`);
     console.log('')
     console.log('╚[════════════════════════════════════]╝')
-    client.user.setActivity("#js",{type: 'WATCHING'}); //Heeeeeemo Heeeeeeeeeemo 
+    client.user.setActivity("#js || !html",{type: 'WATCHING'}); //Heeeeeemo Heeeeeeeeeemo 
 });
 
 const code = '#';
@@ -148,7 +148,7 @@ client.on('message', async (message) => {
 })
 
 
-const code = '#';
+const code = '!';
 
 client.on('message',async message => {
     if(message.content.startsWith(code + "html")) {
