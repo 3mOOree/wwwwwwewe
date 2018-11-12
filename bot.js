@@ -170,7 +170,19 @@ if(message.content.startsWith(`#autorole`)) {
     ar[message.guild.id].role = newRole
      message.channel.send(`**The AutoRole Has Been Changed to ${newRole}.**`)
 
-    fs.writeFile("./AutoRole.json", JSON.stringify(ar), (err) => {
+    } 
+         }
+if(message.content === '#info') {
+    let perms = message.member.hasPermission(`MANAGE_GUILD`) 
+    if(!perms) return message.reply(`You don't have permissions.`)
+    var embed = new Discord.RichEmbed()
+ .addField(`Autorole : :sparkles:  `, `
+State : __${ar[message.guild.id].onoff}__
+Role : __${ar[message.guild.id].role}__`)
+     .setColor(`BLUE`)
+    message.channel.send({embed})
+  }
+     fs.writeFile("./AutoRole.json", JSON.stringify(ar), (err) => {
     if (err) console.error(err)
 });
 
