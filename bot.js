@@ -148,6 +148,6 @@ client.on('message', async (message) => {
 })
 
 
-    fد
+
 
 client.login(process.env.BOT_TOKEN)
