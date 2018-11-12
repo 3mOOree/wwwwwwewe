@@ -19,7 +19,7 @@ client.on('ready', () => {
     console.log(`Users! [ " ${client.users.size} " ]`);
     console.log('')
     console.log('╚[════════════════════════════════════]╝')
-          client.user.setActivity("#js",{type: 'STREAMING'});     //Heeeeeemo Heeeeeeeeeemo   
+          client.user.setActivity("#js",{type: 'WATCHING'});     //Heeeeeemo Heeeeeeeeeemo   
 });
 
 
