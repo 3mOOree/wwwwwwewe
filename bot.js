@@ -19,7 +19,7 @@ client.on('ready', () => {
     client.user.setActivity("#js",{type: 'WATCHING'}); //Heeeeeemo Heeeeeeeeeemo 
 });
 
-const code = '!';
+const code = '#';
 
 client.on('message',async message => {
     if(message.content.startsWith(code + "js")) {
