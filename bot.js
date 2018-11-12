@@ -216,5 +216,5 @@ Role : __${ar[message.guild.id].role}__`)
 
 
 
-
+})
 client.login(process.env.BOT_TOKEN)
