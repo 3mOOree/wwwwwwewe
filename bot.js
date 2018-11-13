@@ -371,26 +371,26 @@ client.on('message', msg => {
   var prefix = '#';
   var men = msg.mentions.members.first();
   if(msg.content.startsWith(prefix + 'قبول')) {
-if(!message.channel.guild) return message.reply(' ');
-    let rank = message.guild.member(message.author).roles.find('name', '• Superme » Owner');	
-	if (!rank) return message.channel.send(':octagonal_sign: **| يجب ان تمتلك رتبة • Superme » Owner لأستخدام هذا الأمر.**');  
+  let rank = message.guild.member(message.author).roles.find('name', '• Supreme » Founder');	
+	if (!rank) return message.channel.send(':octagonal_sign: **| يجب ان تمتلك رتبة • Supreme » Founder لأستخدام هذا الأمر.**');  
     var channel = msg.guild.channels.find(`name`, "✽-قبول-رفض");
     if(!channel) return  msg.reply('لم اجد روم باْسم `✽-قبول-رفض`');
     channel.send(`:white_check_mark: تم قبولك ${men}`)
   }
 });
+   
 
 client.on('message', msg => {
   var prefix = '#';
   var men = msg.mentions.members.first();
   if(msg.content.startsWith(prefix + 'رفض')) 
-	if(!message.channel.guild) return message.reply(' ');
-    let rank = message.guild.member(message.author).roles.find('name', '• Superme » Owner');	
-	if (!rank) return message.channel.send(':octagonal_sign: **| يجب ان تمتلك رتبة • Superme » Owner لأستخدام هذا الأمر.**');   
+let rank = message.guild.member(message.author).roles.find('name', '• Supreme » Founder');	
+	if (!rank) return message.channel.send(':octagonal_sign: **| يجب ان تمتلك رتبة • Supreme » Founder لأستخدام هذا الأمر.**');   
     var channel = msg.guild.channels.find(`name`, "✽-قبول-رفض");
     if(!channel) return  msg.reply('لم اجد روم باْسم `✽-قبول-رفض`');
     channel.send(`:negative_squared_cross_mark:  تم رفضك ${men}`)
-});
+});	
+    
 
  
 	
