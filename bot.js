@@ -390,8 +390,8 @@ client.on('message', msg => {
     var channel = msg.guild.channels.find(`name`, "✽-قبول-رفض");
     if(!channel) return  msg.reply('لم اجد روم باْسم `✽-قبول-رفض`');
     channel.send(`:negative_squared_cross_mark:  تم رفضك ${men}`)
-  }
 });
+
  
 	
 
