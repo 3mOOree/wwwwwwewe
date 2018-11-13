@@ -367,6 +367,18 @@ hours = 12;
 
 
 
+client.on('message', msg => {
+  var prefix = '#';
+  var men = msg.mentions.members.first();
+  if(msg.content.startsWith(prefix + 'قبول')) {
+    var channel = msg.guild.channels.find(`name`, "✽-قبول-رفض");
+    if(!channel) return  msg.reply('لم اجد روم باْسم `✽-قبول-رفض`');
+    channel.send(`:white_check_mark: تم قبولك ${men}`)
+	 message.member.addRole('name`, "• Superme » Support")
+  .then(console.log)
+  .catch(console.error); 
+  }
+});
 
 
 
