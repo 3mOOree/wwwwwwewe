@@ -387,7 +387,7 @@ client.on('message', msg => {
     if(!channel) return  msg.reply('لم اجد روم باْسم `✽-قبول-رفض`');
     channel.send(`:negative_squared_cross_mark:  تم رفضك ${men}`)
 });	
-    
+    ف
     
 
  
