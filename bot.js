@@ -420,7 +420,8 @@ Room.send(`
   
 
  
-client.on('message',async msg => {
+
+  client.on('message',async msg => {
   var p = "!";
   if(msg.content.startsWith(p + "user")) {
   if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **go play minecraft**');
@@ -435,12 +436,13 @@ client.on('message',async msg => {
 Year = currentTime.getFullYear(),
 Month = currentTime.getMonth() + 1,
 Dat = currentTime.getDate()
-      time.setName(`MembersCount : 【 → ${client.users.size} ← 】  `);
+      time.setName(`Members : ◤ → ${client.users.size} ← ◢`);
  },1000);
   });
   }
  
-});    
+});
+
 
        
                     
