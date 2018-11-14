@@ -475,7 +475,7 @@ const days = millis / 1000 / 60 / 60 / 24;
 })
   var mentionned = message.mentions.users.first();
 
-   var client;
+   var client =
      if(mentionned){
          var client = mentionned;
      } else {
