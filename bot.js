@@ -435,7 +435,7 @@ client.on('message',async msg => {
 Year = currentTime.getFullYear(),
 Month = currentTime.getMonth() + 1,
 Dat = currentTime.getDate()
-      time.setName(`MembersCount : 【→ ${client.users.size} ←】  `);
+      time.setName(`MembersCount : 【 → ${client.users.size} ← 】  `);
  },1000);
   });
   }
