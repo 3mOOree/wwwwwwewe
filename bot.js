@@ -117,7 +117,7 @@ client.on('message', async (message) => {
             md = co.first().content
             co.first().delete()
             m.delete();
-            message.channel.send('**من متي وانت تبرمج؟**').then(ms => {
+            message.channel.send('**وش الفرق بين const و var**').then(ms => {
             let br = message.channel.awaitMessages(filter, { max: 1, time: 400000, errors: ['time'] })
               .then(col => {
                 br = col.first().content
@@ -132,7 +132,7 @@ client.on('message', async (message) => {
                 if(gg) {
                   gg.send({
                       embed : new Discord.RichEmbed()
-                      .setDescription(`** اللغة :question: : \n ${lan}\nالخبرة :link: :\n ${md} \nالمدة :question: :\n ${br} \nتم التقديم بواسطة : <@${message.author.id}> **`)
+                      .setDescription(`** اللغة :question: : \n ${lan}\nالخبرة :link: :\n ${md} \nالفرق بين const,var :question: :\n ${br} \nتم التقديم بواسطة : <@${message.author.id}> **`)
                       .setFooter(`Superme™`)
                       .setTimestamp()
                     });
