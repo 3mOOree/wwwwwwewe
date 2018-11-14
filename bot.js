@@ -366,29 +366,60 @@ hours = 12;
 });
 
 //قبول - رفض
+client.on('message',async message => {
 
-client.on('message', msg => {
-  var prefix = '#';
-  var men = msg.mentions.members.first();
-  if(msg.content.startsWith(prefix + 'قبول')) {
-  var channel = msg.guild.channels.find(`name`, "✽-قبول-رفض");
-    if(!channel) return  msg.reply('لم اجد روم باْسم `✽-قبول-رفض`');
-    channel.send(`:white_check_mark: تم قبولك ${men}`)
-  }
+let mention = message.mentions.members.first();
+
+let Room = client.channels.get('512003685027414026');
+
+if(message.content.startsWith(prefix + "رفض")) {
+
+if(message.guild.id !== '487742119851589642') return;
+
+ if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("**للأسف ليس لديك صلاحية**").then(msg => msg.delete(5000));
+
+
+if(!mention) return message.reply("منشن شخص");
+
+
+
+Room.send(`
+**» العضو :** ${mention}
+[ ❌ ] :: لقد تم رفض العضو`);
+
+}
+
 });
-   
-   
+  
 
-client.on('message', msg => {
-  var prefix = '#';
-  var men = msg.mentions.members.first();
-  if(msg.content.startsWith(prefix + 'رفض')) 
- var channel = msg.guild.channels.find(`name`, "✽-قبول-رفض");
-    if(!channel) return  msg.reply('لم اجد روم باْسم `✽-قبول-رفض`');
-    channel.send(`:negative_squared_cross_mark:  تم رفضك ${men}`)
-});	
-    ف
     
+client.on('message',async message => {
+
+let mention = message.mentions.members.first();
+
+let Room = client.channels.get('512003685027414026');
+
+if(message.content.startsWith(prefix + "قبول")) {
+
+if(message.guild.id !== '487742119851589642') return;
+
+ if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("**للأسف ليس لديك صلاحية**").then(msg => msg.delete(5000));
+
+
+if(!mention) return message.reply("منشن شخص");
+
+
+
+Room.send(`
+**» العضو :** ${mention}
+[ ✅ ] :: لقد تم قبول العضو واعطائه رتبة سبورت`);
+
+}
+
+});
+  
+  });
+ 
 
  
 	
