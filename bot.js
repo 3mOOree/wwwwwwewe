@@ -526,7 +526,7 @@ client.on('message', message => {
         .setTitle('Click Here')
         .setURL(`${omar.avatarURL}`)
         .setImage(`${omar.avatarURL}`)
-        .setFooter('Superme™',client.user.avatarURL) 
+        .setFooter('${message.guild.name}',client.user.avatarURL) 
       message.channel.sendEmbed(embed);
     }
 });
