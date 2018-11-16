@@ -512,7 +512,7 @@ m3a4x.channel.sendEmbed(Embed11).then(m3a4x => {m3a4x.delete(20000)})
 
 
 client.on('message', message => {
-    if (message.content.startsWith("avatar")) 
+    if (message.content.startsWith("!avatar")) 
         if (message.author.bot) return
         var mentionned = message.mentions.users.first();
     var omar;
