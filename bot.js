@@ -511,28 +511,7 @@ m3a4x.channel.sendEmbed(Embed11).then(m3a4x => {m3a4x.delete(20000)})
 	
 
 
-client.on('message', message => {
-    if (message.content.startsWith("!avatar")) 
-        if (message.author.bot) return
-        var mentionned = message.mentions.users.first();
-    var omar;
-      if(mentionned){
-          var omar = mentionned;
-      } else {
-          var omar = message.author;
-          
-      }
-        const embed = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setAuthor('Avatar Link :')
-        .setTitle('Click Here')
-        .setURL(`${omar.avatarURL}`)
-        .setImage(`${omar.avatarURL}`)
-        .setFooter(`${message.guild.name}`)
-        .setTimestamp() 
-      message.channel.sendEmbed(embed);
-    
-});
+
 
 
 
