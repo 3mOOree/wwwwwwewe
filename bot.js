@@ -506,12 +506,11 @@ client.on("guildMemberAdd", async member => {
 });
 
 
- client.on('message', message => {
+client.on('message', message => {
 var prefix = "."
+msg.delete()
     if (message.content.startsWith(prefix + 'clear')) {
-message.delete(1500);
       if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(`ليس لديك برمشن[*MANAGE_MESSAGES*] `).catch(console.error);
-  message.delete()
   if(!message.channel.guild) return;
   let args = message.content.split(" ").slice(1);
   
