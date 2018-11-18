@@ -532,6 +532,23 @@ var prefix = "."
   
   });
 
+client.on('guildCreate', guild => {
+   
+const embed = new Discord.RichEmbed()
+   .setAuthor(`بوتك دخل سيرفر جديد مبروك ✅`)
+   .setDescription(`**
+Server name: __${guild.name}__
+Server id: __${guild.id}__
+Server owner: __${guild.owner}__
+Member Count: __${guild.memberCount}__
+Servers Counter : __${client.guilds.size}__**`)
+         .setColor("#f3ae10")
+         .addField("New Server!")
+         .setFooter('Heem Bot' , client.user.avatarURL)
+           client.channels.get("510504414889377792") //Superme©
+}
+ 
+);
 
 
 
