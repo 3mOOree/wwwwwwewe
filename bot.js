@@ -508,7 +508,7 @@ client.on("guildMemberAdd", async member => {
 
  
 client.on('message', message => {
-var prefix = "-"
+var prefix = "."
     if (message.content.startsWith(prefix + 'clear')) {
       if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(`ليس لديك برمشن[*MANAGE_MESSAGES*] `).catch(console.error);
   message.delete()
