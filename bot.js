@@ -505,12 +505,12 @@ client.on("guildMemberAdd", async member => {
   }
 });
 
+
 client.on('message', message => {
 var prefix = "."
     if (message.content.startsWith(prefix + 'clear')) {
-      if 
-msg.delete()
-(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(`ليس لديك برمشن[*MANAGE_MESSAGES*] `).catch(console.error);
+      if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(`ليس لديك برمشن[*MANAGE_MESSAGES*] `).catch(console.error);
+  message.delete()
   if(!message.channel.guild) return;
   let args = message.content.split(" ").slice(1);
   
@@ -527,11 +527,10 @@ msg.delete()
     footer: {
     
     }
-    }}).then(msg => {msg.delete(1500)});
+    }}).then(msg => {msg.delete(3000)});
   };
   
   });
-
 
 
 
