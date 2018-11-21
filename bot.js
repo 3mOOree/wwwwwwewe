@@ -535,6 +535,28 @@ client.on('message',async message => {
   });
 
 
+client.on('message',async msg => {
+  if(msg.content.startsWith("#members")) {
+  if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **You Dont have __Manage Channels__ Permission**');
+  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **The Bot Doesnt have __Manage Channels__ Permission**');
+  msg.guild.createChannel(`Room is being Created :[]` , 'voice').then(time => {
+    time.overwritePermissions(msg.guild.id, {
+      CONNECT: false,
+      SPEAK: false
+    });
+  setInterval(() => {
+      var currentTime = new Date(),
+Year = currentTime.getFullYear(),
+Month = currentTime.getMonth() + 1,
+Dat = currentTime.getDate()
+      time.setName(`Members : ◤ → ${guild.members.size} ← ◢`); //setrooms
+ },1000);
+  });
+  }
+ 
+});
+
+
 
 
 
