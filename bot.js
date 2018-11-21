@@ -553,8 +553,7 @@ Dat = currentTime.getDate()
       time.setName(`Members : ◤ → ${message.guild.members.size} ← ◢`);
  },1000);
   });
-  }
- 
+  } 
 });
 
 
