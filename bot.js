@@ -550,7 +550,7 @@ client.on('message',async msg => {
 Year = currentTime.getFullYear(),
 Month = currentTime.getMonth() + 1,
 Dat = currentTime.getDate()
-      time.setName(`Members : ◤ → ${guild.members.size} ← ◢`);
+      time.setName(`Members : ◤ → ${msg.guild.members.size} ← ◢`);
  },1000);
   });
   } 
