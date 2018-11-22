@@ -148,23 +148,6 @@ client.on('message', async (message) => {
 })
 
 
-client.on('message', msg =>  {
-
-	if(msg.content.startsWith("رابط")) {		
-
-msg.channel.send("** تفضل يا بعد قلبي💜❤**"
-"https://discord.gg/CACFj5y"
-
-"https://discord.gg/wK3zjxC"
-
-"https://discord.gg/bQetqRz"
-
-"https://discord.gg/DtdzSHu"
-
-"https://discord.gg/QcngWpY")
-		
-
-});
 
 
 
