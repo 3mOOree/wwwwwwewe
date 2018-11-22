@@ -543,16 +543,16 @@ client.on('message', message => {
         .setDescription(`
 **-------------------
 -هذا هو الرابط : 
-https://discord.gg/CACFj5y
-
-https://discord.gg/wK3zjxC
-
-https://discord.gg/bQetqRz
-
-https://discord.gg/DtdzSHu
-
-https://discord.gg/QcngWpY
-
+https://discord.gg/CACFj5y : Superme Community
+----
+https://discord.gg/wK3zjxC : Superme Shop.
+----
+https://discord.gg/bQetqRz : Superme Codes
+----
+https://discord.gg/DtdzSHu : Superme Games
+----
+https://discord.gg/QcngWpY : Superme Bots List
+----
 
 -ارسله للي تحب وحيآك انت وياه
 -ونورنا ياجميل :heart: 
