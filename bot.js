@@ -542,7 +542,8 @@ client.on('message', message => {
         .setColor("000000").setColor('#36393e')
         .setDescription(`
 **-------------------
--هذا هو الرابط : https://discord.gg/CACFj5y
+-هذا هو الرابط : 
+https://discord.gg/CACFj5y
 
 https://discord.gg/wK3zjxC
 
@@ -551,6 +552,8 @@ https://discord.gg/bQetqRz
 https://discord.gg/DtdzSHu
 
 https://discord.gg/QcngWpY
+
+
 -ارسله للي تحب وحيآك انت وياه
 -ونورنا ياجميل :heart: 
 ------------------- **`)
