@@ -523,44 +523,6 @@ Dat = currentTime.getDate()
   } 
 });
 
-client.on('message', message => {
-   if(message.content.startsWith("رابط")) {
-        
-  message.channel.createInvite({
-        thing: true,
-        maxUses: 5,
-        maxAge: 86400
-    }).then(invite =>  
-      message.author.sendMessage(invite.url)
-    )
-    const embed = new Discord.RichEmbed()
-        .setColor("000000").setColor('#36393e')
-        .setDescription("| :white_check_mark:  | :heart:  تم ارسال الرابط على الخاص  ")
-        .setFooter("Superme Codes™")
-      message.channel.sendEmbed(embed)
-              const Embed11 = new Discord.RichEmbed()
-        .setColor("000000").setColor('#36393e')
-        .setDescription(`
-**-------------------
--هذا هو الرابط : 
-https://discord.gg/CACFj5y : Superme Community
-----
-https://discord.gg/wK3zjxC : Superme Shop.
-----
-https://discord.gg/bQetqRz : Superme Codes
-----
-https://discord.gg/DtdzSHu : Superme Games
-----
-https://discord.gg/QcngWpY : Superme Bots List
-----
-
--ارسله للي تحب وحيآك انت وياه
--ونورنا ياجميل :heart: 
-------------------- **`)
-        .setFooter("S.C")
-      message.author.sendEmbed(Embed11)
-    }
-});
 
 
 
