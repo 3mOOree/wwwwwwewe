@@ -535,7 +535,7 @@ client.on('message',async rebel => {
 
     if (rebel.member.nickname === null) {
 
-      msg.channel.send("أهلا بك , <@"+rebel.author.id+"> أنأ **أحاول** أن أزيل عنك الأفك.");     } else {
+      rebel.channel.send("أهلا بك , <@"+rebel.author.id+"> أنأ **أحاول** أن أزيل عنك الأفك.");     } else {
 
       rebel.member.setNickname(rebel.member.nickname.replace(/(\[AFK\])/,''));
 
