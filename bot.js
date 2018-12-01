@@ -328,16 +328,7 @@ client.on('guildMemberAdd', member => {
 
 
 
-client.on('guildMemberAdd', member => {
-  member.guild.fetchInvites().then(guildInvites => {
-    const ei = invites[member.guild.id];
-    invites[member.guild.id] = guildInvites;
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    const inviter = client.users.get(invite.inviter.id);
-    const logChannel = member.guild.channels.find(channel => channel.name === "✽-welcome");
-    logChannel.send(`Invited by: < @${inviter.tag} >`);
-  });
-});
+
 
 
 
