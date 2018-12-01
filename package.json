@@ -8,6 +8,7 @@
   },
   "dependencies": {
      "math-expression-evaluator":"1.2.17",
+    "moment-duration-format": "^2.2.2", 
      "canvas": "^1.6.11",
     "util": "0.11.1",
     "common-tags":"1.7.2",
