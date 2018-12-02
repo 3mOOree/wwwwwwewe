@@ -678,49 +678,91 @@ client.on('message', message => {
     }
     });
 
-client.on('message', message => {
-	var prefix = "#";
-if (message.content.startsWith(prefix + 'trans')) {
-    let args = message.content.split(" ").slice(1);
-    if (!args[0]) {
-    
-        const embed = new Discord.RichEmbed()
-            .setColor("FFFFFF")
-            .setDescription("**ترجمة الكتابة.**\استعمل: `-trans <الكلمة لتبي> <االغة>`");
+const translate = require('google-translate-api'); //npm i google-translate-api
 
-        return message.channel.send(embed);
+client.on("message", message => {
+
+if(message.content.startsWith("=trans")) {
+
+if(message.author.bot) return;
+
+if(!message.channel.guild)return;
+
+let args = message.content.split(' ').slice(1);
+
+    if (args[0]) {
+
+        let from_language = "auto"
+
+        let to_language = "en"
+
+        let tobe_translated = message.content.slice(prefix.length + command.length + 1)
+
+        if (args[0].startsWith("from:")) { 
+
+            from_language = args[0].slice(5)
+
+            tobe_translated = tobe_translated.slice(args[0].length + 1)
+
+            if (args[1].startsWith("to:")) {
+
+                to_language = args[1].slice(3)
+
+                tobe_translated = tobe_translated.slice(args[1].length + 1) 
+
+            }
+
+        } else if (args[0].startsWith("to:")) {
+
+            to_language = args[0].slice(3)
+
+            tobe_translated = tobe_translated.slice(args[0].length + 1)
+
+            if (args[1].startsWith("from:")) {
+
+                from_language = args[1].slice(5)
+
+                tobe_translated = tobe_translated.slice(args[1].length + 1) 
+
+            }
+
+        }
+
+        translate(tobe_translated, {
+
+            from: from_language,
+
+            to: to_language
+
+        }).then(res => { 
+
+            from_language = res.from.language.iso
+
+            if (res.from.text.value) tobe_translated = res.from.text.value
+
+            final_text = res.text
+
+            message.channel.send(`:u7981: | **Translated**.
+
+**- From**: \`${from_language}\` **|** ${tobe_translated}
+
+**- To**: \`${to_language}\` **|** ${final_text}`)
+
+        }).catch(err => {
+
+            message.channel.send(":x: Usage: `" + prefix + "translate [from:iso] [to:iso] <some text>` \nThe from: and to: are optional, you can check out <http://bit.ly/ISO_codesWiki> for the iso codes\nExample: ```" + prefix + "translate from:ro to:fr Salut, ce mai faci?```")
+
+        });
 
     } else {
 
-        if (args.length === undefined) {
+        message.channel.send(":x: Usage: `" + prefix + "translate [from:iso] [to:iso] <some text>` \nThe from: and to: are optional, you can check out <http://bit.ly/ISO_codesWiki> for the iso codes\nExample: ```" + prefix + "translate from:ro to:fr Salut, ce mai faci?```")
 
-            return message.channel.send("**ترجمة الكتابة.**\استعمل: `-trans <الكلمة لتبي> <االغة>`");
-
-        } else {
-
-            let transArg = args[0].toLowerCase();
-
-            args = args.join(' ').slice(1)
-            let translation;
-
-            if (!args.includes(transArg)) return message.channel.send(`**Language not found.**`);
-            args = args.slice(transArg.length);
-
-            translate(args, {
-                to: transArg
-            }).then(res => {
-
-                const embed = new Discord.RichEmbed()
-                    .setAuthor("Translator", client.user.displayAvatarURL)
-                    .addField(`Input`, `\`\`\`${args}\`\`\``)
-                    .setColor("#42f4c8")
-                    .addField(`Output`, `\`\`\`${res.text}\`\`\``);
-                return message.channel.send(embed);
-            });
-        }
     }
+
 }
-});
+
+})
 
 
 
