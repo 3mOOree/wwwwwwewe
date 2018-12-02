@@ -701,7 +701,7 @@ if (command == "za5") {
 
         .setTitle('Text emboss :')
 
-   message.channel.send(`**#** \n ${zalgo(args.join(' '))}`);
+   message.channel.send(`**#** \n ${args}(args.join(' '))}`);
 
   }
 
