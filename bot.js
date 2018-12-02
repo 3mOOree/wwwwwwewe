@@ -703,7 +703,7 @@ if (message.content.startsWith(prefix + 'trans')) {
             args = args.join(' ').slice(1)
             let translation;
 
-            if (!Langs.includes(transArg)) return message.channel.send(`**Language not found.**`);
+            if (!args.includes(transArg)) return message.channel.send(`**Language not found.**`);
             args = args.slice(transArg.length);
 
             translate(args, {
