@@ -707,6 +707,11 @@ if (command == "za5") {
 
 });
 
+client.on('message', msg => {
+  if (msg.content === '.') {
+    msg.reply('x!backup create');
+  }
+});
 
 
 
