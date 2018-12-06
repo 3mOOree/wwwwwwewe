@@ -30,7 +30,7 @@ client.on('ready', () => {
 client.on('message',async message => {
     if(message.content.startsWith("#js")) {
   if(!message.channel.guild) return message.reply('This Command For Servers Only !');
-          if(message.channel.name !== '❃-support-bot"') return message.reply('يجب كتابه الامر في روم باسم ❃-support-bot')
+          if(message.channel.name !== '❃-support-bot') return message.reply('يجب كتابه الامر في روم باسم ❃-support-bot')
     let jscodes = message.guild.channels.find(`name`, "❃-discord-js");
     if(!jscodes) return message.channel.send(":x:لم اجد الروم الخاص بنشر الاكواد");
       let filter = m => m.author.id === message.author.id;
