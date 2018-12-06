@@ -5,7 +5,7 @@ const moment = require('moment');
 const Canvas = require('canvas');
 const jimp = require('jimp');
 const prefix = '#'
-const code = '#'
+
 
 client.on('ready', () => {
     console.log('╔[════════════════════════════════════]╗'); // Heeeeeemo
@@ -21,14 +21,14 @@ client.on('ready', () => {
     console.log(`Users! [ " ${client.users.size} " ]`);
     console.log('')
     console.log('╚[════════════════════════════════════]╝')
-    client.user.setActivity("#js",{type: 'WATCHING'}); //Heeeeeemo Heeeeeeeeeemo 
+    client.user.setActivity("#js||#html",{type: 'WATCHING'}); //Heeeeeemo Heeeeeeeeeemo 
 });
 
 
 
 
 client.on('message',async message => {
-    if(message.content.startsWith(codes + "js")) {
+    if(message.content.startsWith("#js")) {
   if(!message.channel.guild) return message.reply('This Command For Servers Only !');
           if(message.channel.name !== '❃-support-bot"') return message.reply('يجب كتابه الامر في روم باسم ❃-support-bot')
     let jscodes = message.guild.channels.find(`name`, "❃-discord-js");
@@ -109,7 +109,7 @@ ${thisMessage}\`\`\`
 
 
 client.on('message',async message => {
-    if(message.content.startsWith(code + "html")) {
+    if(message.content.startsWith("#html")) {
   if(!message.channel.guild) return message.reply('This Command For Servers Only !');
           if(message.channel.name !== '❃-support-bot') return message.reply('يجب كتابه الامر في روم باسم ❃-support-bot')
     let jscodes = message.guild.channels.find(`name`, "❃-html");
