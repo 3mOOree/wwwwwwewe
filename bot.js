@@ -5,6 +5,7 @@ const moment = require('moment');
 const Canvas = require('canvas');
 const jimp = require('jimp');
 const prefix = '#'
+const code = '#'
 
 client.on('ready', () => {
     console.log('╔[════════════════════════════════════]╗'); // Heeeeeemo
@@ -24,10 +25,10 @@ client.on('ready', () => {
 });
 
 
-const code = '#';//prefix
+
 
 client.on('message',async message => {
-    if(message.content.startsWith(code + "js")) {
+    if(message.content.startsWith(codes + "js")) {
   if(!message.channel.guild) return message.reply('This Command For Servers Only !');
           if(message.channel.name !== '❃-support-bot"') return message.reply('يجب كتابه الامر في روم باسم ❃-support-bot')
     let jscodes = message.guild.channels.find(`name`, "❃-discord-js");
@@ -105,7 +106,7 @@ ${thisMessage}\`\`\`
       })}});
 
 
-const code = '#';//prefix
+
 
 client.on('message',async message => {
     if(message.content.startsWith(code + "html")) {
