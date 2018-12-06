@@ -725,10 +725,14 @@ client.on("guildMemberAdd", member => {
  
  
 });
-             }
-             )}
-             )}
-            })
+
+             }
+
+             )}
+
+             )}
+
+            })
 
 
 
