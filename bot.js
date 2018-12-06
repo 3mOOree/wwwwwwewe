@@ -637,7 +637,7 @@ const roles = config.roleToDisco;
 
 
 const sWlc = {}
-const premium = ['515082432203194378']
+const premium = ['449567019243798528']
 client.on('message', message => {
 var prefix = ">";
 if(message.channel.type === "dm") return;
