@@ -724,7 +724,7 @@ client.on("guildMemberAdd", member => {
     welcomer.sendFile(canvas.toBuffer())
  
  
-});
+
 
              }
 
@@ -770,7 +770,7 @@ client.on("guildMemberAdd", (member) => {
             if (dat[Inv])
                 if (dat[Inv] < Invite.uses) {
                     console.log(3);
- channel.send(`${member} Joined By ${Invite.inviter}`)
+ channel.send(`Joined By ${Invite.inviter}`)
  }
             dat[Inv] = Invite.uses;
         })
