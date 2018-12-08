@@ -813,7 +813,17 @@ if (command == "za5") {
 				
 			
 
+client.on('guildMemberAdd', (member) => {
 
+let channel = client.channels.get('520122930575835136')
+
+if(member.user.bot) {
+
+channel.send(`${member} ولكم يا عمو البوت`)
+
+}
+
+})
 
 
 
