@@ -199,53 +199,7 @@ ${thisMessage}\`\`\`
 
 
 
-client.on('message', async (message) => {
-  if(message.content.startsWith("#تقديم")) {
-    await message.channel.send("** ما لغتك؟**").then(e => {
-    let filter = m => m.author.id === message.author.id
-    let lan = '';
-    let md = '';
-    let br = '';
-    let chaLan = message.channel.awaitMessages(filter, { max: 1, time: 400000, errors: ['time'] })
-      .then(collected => {
-        lan = collected.first().content
-        collected.first().delete()
-        e.delete();
-        message.channel.send('** ما خبرتك؟**').then(m => {
-        let chaMd = message.channel.awaitMessages(filter, { max: 1, time: 400000, errors: ['time'] })
-          .then(co => {
-            md = co.first().content
-            co.first().delete()
-            m.delete();
-            message.channel.send('**وش الفرق بين const و var**').then(ms => {
-            let br = message.channel.awaitMessages(filter, { max: 1, time: 400000, errors: ['time'] })
-              .then(col => {
-                br = col.first().content
-                col.first().delete()
-                ms.delete()
-                message.channel.send('جاري التقديم ..').then(b => {
-                setTimeout(() => { 
-                  b.edit(`**تم التقديم وسيتم الرد فـ اقرب وقت**`)
-                },2000);
-                var gg = message.guild.channels.find('name', '❃-التقديم')
-                if(!gg) return;
-                if(gg) {
-                  gg.send({
-                      embed : new Discord.RichEmbed()
-                      .setDescription(`** اللغة :question: : \n ${lan}\nالخبرة :link: :\n ${md} \nالفرق بين const,var :question: :\n ${br} \nتم التقديم بواسطة : <@${message.author.id}> **`)
-                      .setFooter(`Superme™`)
-                      .setTimestamp()
-                    });
-                  } 
-                })
-              })
-            })
-          })
-        })
-      })
-    })
-  }
-})
+
                       
 
 
@@ -846,29 +800,29 @@ client.on('message', async superme => {
 
       let questions = [
 
-      'ماهي فائده  if(!message.channel.guild) return; ?',
+      '**ماهي فائده  if(!message.channel.guild) return; ?**',
 
-      'ماهي فائده if(!message.user.bot) return ?',
+      '**ماهي فائده if(!message.user.bot) return ?**',
 
-      'مالفرق بين const و var ?',
+      '**مالفرق بين const و var ?**',
 
-      'ماهي فائده ملفات JSON ?',
+      '**ماهي فائده ملفات JSON ?**',
 
-      'ماهي فائده forEach ?',
+      '**ماهي فائده forEach ?**',
 
-      'ماهي فائده client.on(`message`, message => { ?',
+      '**ماهي فائده client.on(`message`, message => { ?**',
 
-      'كيف تستخدم await ?',
+      '**كيف تستخدم await ?**',
 
-      'مالفرق بين message.channel.send(``) و message.reply(``) ?',
+      '**مالفرق بين message.channel.send(``) و message.reply(``) ?**',
 
-      'الفرق بين || و &&'
+      '**الفرق بين || و &&**'
 
       ]
 
       let fillter = m => m.author.id === superme.author.id
 
-      await superme.channel.send("ما لغتك ؟").then(e => {
+      await superme.channel.send("**ما لغتك ؟**").then(e => {
 
      superme.channel.awaitMessages(fillter, { time: 60000, max: 1 })
 
@@ -878,7 +832,7 @@ client.on('message', async superme => {
 
         co.first().delete();
 
-       e.edit(`كم هي المدة ؟
+       e.edit(`**كم هي المدة ؟**
 
 [${lang}]`)
 
@@ -890,7 +844,7 @@ client.on('message', async superme => {
 
           col.first().delete();
 
-            e.edit(`ما هي خبرتك ؟
+            e.edit(`**ما هي خبرتك ؟**
 
 [${time}]
 
@@ -922,7 +876,7 @@ client.on('message', async superme => {
 
                   coll.first().delete();
 
-               e.edit(`جاري تقديمك...
+               e.edit(`**جاري تقديمك...**
 
 [${expe}]
 
@@ -936,7 +890,7 @@ client.on('message', async superme => {
 
               setTimeout(() => {
 
-                e.edit("تم التقديم")
+                e.edit("**تم التقديم**")
 
               }, 3000)
 
