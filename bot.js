@@ -830,7 +830,149 @@ if (command == "za5") {
 						
 				
 			
+client.on('message', async superme => {
 
+    if(superme.content.startsWith(prefix + "تقديم")) {
+
+      let lang = '';
+
+      let time = '';
+
+      let expe = '';
+
+      
+
+      let qest = ''; 
+
+      let questions = [
+
+      'ماهي فائده  if(!message.channel.guild) return; ?',
+
+      'ماهي فائده if(!message.user.bot) return ?',
+
+      'مالفرق بين const و var ?',
+
+      'ماهي فائده ملفات JSON ?',
+
+      'ماهي فائده forEach ?',
+
+      'ماهي فائده client.on(`message`, message => { ?',
+
+      'كيف تستخدم await ?',
+
+      'مالفرق بين message.channel.send(``) و message.reply(``) ?',
+
+      'الفرق بين || و &&'
+
+      ]
+
+      let fillter = m => m.author.id === superme.author.id
+
+      await superme.channel.send("ما لغتك ؟").then(e => {
+
+     superme.channel.awaitMessages(fillter, { time: 60000, max: 1 })
+
+     .then(co => {
+
+       lang = co.first().content;
+
+        co.first().delete();
+
+       e.edit(`كم هي المدة ؟
+
+[${lang}]`)
+
+       superme.channel.awaitMessages(fillter, { time: 60000, max: 1 })
+
+       .then(col => {
+
+         time = col.first().content;
+
+          col.first().delete();
+
+            e.edit(`ما هي خبرتك ؟
+
+[${time}]
+
+[${lang}]`)
+
+            superme.channel.awaitMessages(fillter, { time: 60000, max: 1 })
+
+            .then(coll => {
+
+              expe = coll.first().content;
+
+               coll.first().delete();
+
+            let question = questions[Math.floor(Math.random() * questions.length)]
+
+               e.edit(`${question}
+
+               [${qest}]`)
+
+               superme.channel.awaitMessages(fillter, { time: 60000, max: 1 })
+
+               .then(coll => {
+
+   
+
+                 qest = coll.first().content;
+
+   
+
+                  coll.first().delete();
+
+               e.edit(`جاري تقديمك...
+
+[${expe}]
+
+[${time}]
+
+[${lang}]
+
+[${qest}]`)
+
+              let superme = superme.guild.channels.find("name","❃-التقديم")
+
+              setTimeout(() => {
+
+                e.edit("تم التقديم")
+
+              }, 3000)
+
+             let embed = new Discord.RichEmbed()
+
+             .setDescription(`
+
+             » اللغة : **${lang}**
+
+             » المدة : **${time}**
+
+             » الخبرة : **${expe}**
+
+             » ${question} : **${qest}**
+
+             » تم التقديم بواسطة: ${superme.author}`)
+
+              superme.sendEmbed(embed).then(superme => {
+
+                  superme.react("✅")
+
+                  superme.react("❌")
+
+                })
+
+            })
+
+       })
+
+     })
+
+   })
+
+    }
+
+      )}})
 
 
 
