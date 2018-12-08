@@ -784,9 +784,9 @@ if (command == "za5") {
 						
 				
 			
-client.on('message', async superme => {
+client.on('message', async rokz => {
 
-    if(superme.content.startsWith(prefix + "تقديم")) {
+    if(rokz.content.startsWith(prefix + "تقديم")) {
 
       let lang = '';
 
@@ -820,11 +820,11 @@ client.on('message', async superme => {
 
       ]
 
-      let fillter = m => m.author.id === superme.author.id
+      let fillter = m => m.author.id === rokz.author.id
 
-      await superme.channel.send("**ما لغتك ؟**").then(e => {
+      await rokz.channel.send("**ما لغتك ؟**").then(e => {
 
-     superme.channel.awaitMessages(fillter, { time: 60000, max: 1 })
+     rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
 
      .then(co => {
 
@@ -836,7 +836,7 @@ client.on('message', async superme => {
 
 [${lang}]`)
 
-       superme.channel.awaitMessages(fillter, { time: 60000, max: 1 })
+       rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
 
        .then(col => {
 
@@ -850,7 +850,7 @@ client.on('message', async superme => {
 
 [${lang}]`)
 
-            superme.channel.awaitMessages(fillter, { time: 60000, max: 1 })
+            rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
 
             .then(coll => {
 
@@ -864,7 +864,7 @@ client.on('message', async superme => {
 
                [${qest}]`)
 
-               superme.channel.awaitMessages(fillter, { time: 60000, max: 1 })
+               rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
 
                .then(coll => {
 
@@ -876,17 +876,17 @@ client.on('message', async superme => {
 
                   coll.first().delete();
 
-               e.edit(`**جاري تقديمك...**
+               e.edit(`**جاري تقديمك...**`)
 
-[${expe}]
 
-[${time}]
 
-[${lang}]
 
-[${qest}]`)
 
-              let superme = superme.guild.channels.find("name","❃-التقديم")
+
+
+
+
+              let rokz = rokz.guild.channels.find("name","❃-التقديم")
 
               setTimeout(() => {
 
@@ -906,13 +906,13 @@ client.on('message', async superme => {
 
              » ${question} : **${qest}**
 
-             » تم التقديم بواسطة: ${superme.author}`)
+             » تم التقديم بواسطة: ${rokz.author}`)
 
-              superme.sendEmbed(embed).then(superme => {
+              rokz.sendEmbed(embed).then(superme => {
 
-                  superme.react("✅")
+                  rokz.react("✅")
 
-                  superme.react("❌")
+                  rokz.react("❌")
 
                 })
 
