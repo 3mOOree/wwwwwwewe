@@ -782,152 +782,71 @@ if (command == "za5") {
 
 });
 						
-				
-			
-client.on('message', async rokz => {
-
-    if(rokz.content.startsWith(prefix + "تقديم")) {
-
-      let lang = '';
-
-      let time = '';
-
-      let expe = '';
-
-      
-
-      let qest = ''; 
-
-      let questions = [
-
-      '**ماهي فائده  if(!message.channel.guild) return; ?**',
-
-      '**ماهي فائده if(!message.user.bot) return ?**',
-
-      '**مالفرق بين const و var ?**',
-
-      '**ماهي فائده ملفات JSON ?**',
-
-      '**ماهي فائده forEach ?**',
-
-      '**ماهي فائده client.on(`message`, message => { ?**',
-
-      '**كيف تستخدم await ?**',
-
-      '**مالفرق بين message.channel.send(``) و message.reply(``) ?**',
-
-      '**الفرق بين || و &&**'
-
+client.on('message', async (message) => {
+  if(message.content.startsWith("#تقديم")) {
+    await message.channel.send("** ما لغتك؟**").then(e => {
+    let filter = m => m.author.id === message.author.id
+    let lan = '';
+    let md = '';
+    let br = '';
+    let qest = '';
+    let questions = [
+      'ماهي فائده  if(!message.channel.guild) return; ?',
+      'ماهي فائده if(!message.user.bot) return ?',
+      'مالفرق بين const و var ?',
+      'ماهي فائده ملفات JSON ?',
+      'ماهي فائده forEach ?',
+      'ماهي فائده client.on(`message`, message => { ?',
+      'كيف تستخدم await ?',
+      'مالفرق بين message.channel.send(``) و message.reply(``) ?',
+      'الفرق بين || و &&'
+ 
       ]
-
-      let fillter = m => m.author.id === rokz.author.id
-
-      await rokz.channel.send("**ما لغتك ؟**").then(e => {
-
-     rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
-
-     .then(co => {
-
-       lang = co.first().content;
-
-        co.first().delete();
-
-       e.edit(`**كم هي المدة ؟**
-
-[${lang}]`)
-
-       rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
-
-       .then(col => {
-
-         time = col.first().content;
-
-          col.first().delete();
-
-            e.edit(`**ما هي خبرتك ؟**
-
-[${time}]
-
-[${lang}]`)
-
-            rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
-
-            .then(coll => {
-
-              expe = coll.first().content;
-
-               coll.first().delete();
-
+    let chaLan = message.channel.awaitMessages(filter, { max: 1, time: 400000, errors: ['time'] })
+      .then(collected => {
+        lan = collected.first().content
+        collected.first().delete()
+        e.delete();
+        message.channel.send('** ما خبرتك؟**').then(m => {
+        let chaMd = message.channel.awaitMessages(filter, { max: 1, time: 400000, errors: ['time'] })
+          .then(co => {
+            md = co.first().content
+            co.first().delete()
+            m.delete();
             let question = questions[Math.floor(Math.random() * questions.length)]
-
-               e.edit(`${question}
-
-               [${qest}]`)
-
-               rokz.channel.awaitMessages(fillter, { time: 60000, max: 1 })
-
-               .then(coll => {
-
-   
-
-                 qest = coll.first().content;
-
-   
-
-                  coll.first().delete();
-
-               e.edit(`**جاري تقديمك...**`)
-
-
-
-
-
-
-
-
-
-              let rokz = rokz.guild.channels.find("name","❃-التقديم")
-
-              setTimeout(() => {
-
-                e.edit("**تم التقديم**")
-
-              }, 3000)
-
-             let embed = new Discord.RichEmbed()
-
-             .setDescription(`
-
-             » اللغة : **${lang}**
-
-             » المدة : **${time}**
-
-             » الخبرة : **${expe}**
-
-             » ${question} : **${qest}**
-
-             » تم التقديم بواسطة: ${rokz.author}`)
-
-              rokz.sendEmbed(embed).then(superme => {
-
-                  rokz.react("✅")
-
-                  rokz.react("❌")
-
+            message.channel.send(question).then(ms => {
+            let br = message.channel.awaitMessages(filter, { max: 1, time: 400000, errors: ['time'] })
+              .then(col => {
+                br = col.first().content
+                col.first().delete()
+                ms.delete()
+                message.channel.send('جاري التقديم ..').then(b => {
+                setTimeout(() => { 
+                  b.edit(`**تم التقديم وسيتم الرد فـ اقرب وقت**`)
+                },2000);
+                var gg = message.guild.channels.find('name', '❃-التقديم')
+                if(!gg) return;
+                if(gg) {
+                  gg.send({
+                      embed : new Discord.RichEmbed()
+                      .setDescription(`** اللغة ❓ : \n ${lan}\nالخبرة 🔗 :\n ${md} \n ${question}❓ :\n ${br} \nتم التقديم بواسطة : <@${message.author.id}> **`)
+                      .setFooter(`Superme™`)
+                      .setTimestamp()
+                    });
+                  } 
                 })
-
+              })
             })
+          })
+        })
+      })
+    })
+  }
+})				
+			
 
-       })
-
-     })
-
-   })
-
-    }
-
-      )}})
-
+          
+              
 
 
 
