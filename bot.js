@@ -791,15 +791,15 @@ client.on('message', async (message) => {
     let br = '';
     let qest = '';
     let questions = [
-      'ماهي فائده  if(!message.channel.guild) return; ?',
-      'ماهي فائده if(!message.user.bot) return ?',
-      'مالفرق بين const و var ?',
-      'ماهي فائده ملفات JSON ?',
-      'ماهي فائده forEach ?',
-      'ماهي فائده client.on(`message`, message => { ?',
-      'كيف تستخدم await ?',
-      'مالفرق بين message.channel.send(``) و message.reply(``) ?',
-      'الفرق بين || و &&'
+      '**ماهي فائده  if(!message.channel.guild) return; **',
+      '**ماهي فائده if(!message.user.bot) return **',
+      '**مالفرق بين const و var **',
+      '**ماهي فائده ملفات JSON **',
+      '**ماهي فائده forEach **',
+      '**ماهي فائده client.on(`message`, message => { **',
+      '**كيف تستخدم await **',
+      '*مالفرق بي*ن message.channel.send(``) و message.reply(``) **',
+      '**الفرق بين || و &&**'
  
       ]
     let chaLan = message.channel.awaitMessages(filter, { max: 1, time: 400000, errors: ['time'] })
