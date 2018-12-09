@@ -707,7 +707,7 @@ client.on("ready", () => {
 })
 client.on('guildMemberAdd', (member) => {
 
-let channel = client.channels.get('ايدي الروم')
+let channel = client.channels.get('520122930575835136')
 
 if(member.user.bot) {
 
@@ -747,7 +747,7 @@ client.on("guildMemberAdd", (member) => {
             dat[Inv] = Invite.uses;
         })
     })
-
+});
 	
 
 const zalgo = require('zalgolize'); 
