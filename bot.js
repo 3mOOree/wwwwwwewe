@@ -747,7 +747,8 @@ client.on("guildMemberAdd", (member) => {
             dat[Inv] = Invite.uses;
         })
     })
-});	
+
+	
 
 const zalgo = require('zalgolize'); 
 				
