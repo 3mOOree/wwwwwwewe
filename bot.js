@@ -558,7 +558,7 @@ client.on("ready", () => {
     function rainbow() {
       client.guilds.get('515082432203194378').roles.find("name", "Rainbow🌈").setColor("RANDOM");
     }
-    setInterval(rainbow, 6000);//rainbow delay time (ms)
+    setInterval(rainbow, 3000);//rainbow delay time (ms)
   })
 
 const sWlc = {}
