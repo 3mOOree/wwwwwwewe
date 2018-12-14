@@ -827,10 +827,10 @@ client.on('message', msg => {
       .setColor("RANDOM")
    .setTitle(`تفضل يا قلبي 🌹`)
    .setDescription(` 
-https://discord.gg/wK3zjxC | Name Server
-https://discord.gg/bQetqRz | Name Server
-https://discord.gg/DtdzSHu | Name Server
-https://discord.gg/QAsfMqQ | Name Server
+https://discord.gg/wK3zjxC | Superme BotsList
+https://discord.gg/bQetqRz | Superme Games
+https://discord.gg/DtdzSHu | Superme Shop.
+https://discord.gg/QAsfMqQ | Superme Codes.
 `)
 .setFooter(`Superme™`)
 
