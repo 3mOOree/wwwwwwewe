@@ -817,25 +817,31 @@ client.on('message', async (message) => {
 })				
 			
 
-client.on('msg', msg => {
+  
+ 
+
+client.on('message', msg => {
   if (msg.content === 'رابط') {
-  	    msg.react("💜")
-  	let embed = new Discord.RichEmbed()
-  	.setColor("RANDOM")
+          msg.react("💜")
+      let embed = new Discord.RichEmbed()
+      .setColor("RANDOM")
    .setTitle(`تفضل يا قلبي 🌹`)
    .setDescription(` 
-https://discord.gg/wK3zjxC
-https://discord.gg/bQetqRz
-https://discord.gg/DtdzSHu
-https://discord.gg/QAsfMqQ
+https://discord.gg/wK3zjxC | Name Server
+https://discord.gg/bQetqRz | Name Server
+https://discord.gg/DtdzSHu | Name Server
+https://discord.gg/QAsfMqQ | Name Server
 `)
 .setFooter(`Superme™`)
 
 
-msg.channel.sendEmbed(embed);
-}
-});  
-    
+
+msg.channel.sendEmbed(embed);      
+  }   
+ });
+
+
+
     
           
               
