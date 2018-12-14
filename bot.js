@@ -818,37 +818,24 @@ client.on('message', async (message) => {
 			
 
 client.on('msg', msg => {
-
   if (msg.content === 'رابط') {
-
   	    msg.react("💜")
-
   	let embed = new Discord.RichEmbed()
-
   	.setColor("RANDOM")
-
    .setTitle(`تفضل يا قلبي 🌹`)
-
    .setDescription(` 
-
 https://discord.gg/wK3zjxC
-
 https://discord.gg/bQetqRz
-
 https://discord.gg/DtdzSHu
-
 https://discord.gg/QAsfMqQ
-
 `)
-
 .setFooter(`Superme™`)
 
+
 msg.channel.sendEmbed(embed);
-
 }
-
 });  
-
+    
     
           
               
