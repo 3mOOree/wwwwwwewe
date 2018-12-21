@@ -31,7 +31,7 @@ client.on('message',async message => {
     if(message.content.startsWith("#js")) {
   if(!message.channel.guild) return message.reply('This Command For Servers Only !');
           if(message.channel.name !== '❃-support-bot') return message.reply('يجب كتابه الامر في روم باسم ❃-support-bot')
-    let jscodes = message.guild.channels.find(`name`, "❃-discord-js");
+    let jscodes = message.guild.channels.find(`name`, "・discord-js");
     if(!jscodes) return message.channel.send(":x:لم اجد الروم الخاص بنشر الاكواد");
       let filter = m => m.author.id === message.author.id;
       let thisMessage;
@@ -112,7 +112,7 @@ client.on('message',async message => {
     if(message.content.startsWith("#html")) {
   if(!message.channel.guild) return message.reply('This Command For Servers Only !');
           if(message.channel.name !== '❃-support-bot') return message.reply('يجب كتابه الامر في روم باسم ❃-support-bot')
-    let jscodes = message.guild.channels.find(`name`, "❃-html");
+    let jscodes = message.guild.channels.find(`name`, "・html");
     if(!jscodes) return message.channel.send(":x:لم اجد الروم الخاص بنشر الاكواد");
       let filter = m => m.author.id === message.author.id;
       let thisMessage;
