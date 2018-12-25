@@ -828,11 +828,10 @@ client.on('message', msg => {
    .setTitle(`تفضل يا قلبي 🌹`)
    .setDescription(` 
 https://discord.gg/wK3zjxC **| Superme BotsList**
-https://discord.gg/bQetqRz **| Superme Games**
 https://discord.gg/DtdzSHu **| Superme Shop.**
 https://discord.gg/QAsfMqQ **| Superme Codes.**
 `)
-.setFooter(`Superme™`)
+.setFooter(`$(msg.guild.name)™`)
 
 
 
