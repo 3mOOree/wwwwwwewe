@@ -831,7 +831,7 @@ https://discord.gg/wK3zjxC **| Superme BotsList**
 https://discord.gg/DtdzSHu **| Superme Shop.**
 https://discord.gg/QAsfMqQ **| Superme Codes.**
 `)
-.setFooter(`$(msg.guild.name)™`)
+.setFooter(`${msg.guild.name}™`)
 
 
 
